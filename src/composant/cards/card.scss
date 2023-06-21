@@ -1,0 +1,29 @@
+.card {
+    width: calc(100% - 20px);
+    height: calc(100% - 30px);
+    margin: 10px;
+    border: 1px solid #ee6c6c;
+    background-color: #ee6c6c;
+    border-radius: 15px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+
+    .card-image {
+        width: 100%;
+        height: 60%;
+        background-position: center; 
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+      }
+
+      h2{
+        margin-top: 40px;
+      }
+  }
+
+.card:hover {
+    cursor: pointer;
+}
