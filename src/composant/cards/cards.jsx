@@ -1,16 +1,19 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../cards/card.scss';
 
 function Cards({ data }) {
     const cards = data.map((item) => (
-      <Card
-        key={item.id}
-        title={item.title}
-        cover={item.cover}
-      />
+        <Link to={`/card/${item.id}`} key={item.id}>
+            <Card
+                key={item.id}
+                title={item.title}
+                cover={item.cover}
+            />
+        </Link>    
     ));
   
-    return cards; // Renvoie directement les cartes
+    return cards;
   }
 
 function Card({ title, cover, description }) {

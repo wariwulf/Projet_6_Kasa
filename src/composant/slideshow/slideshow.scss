@@ -1,0 +1,33 @@
+.slideshow {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-position: center; 
+    background-size: cover;
+    overflow: hidden;
+    border-radius: 25px;
+    border: 1px solid #f6f6f6;
+
+    .slideshow-image{
+        width: 100%;
+        height: auto;
+    }
+  }
+  
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 100px;
+    color: white;
+    opacity: 0.5;
+  }
+  
+  .left {
+    left: 10px; 
+  }
+  
+  .right {
+    right: 10px; 
+  }
