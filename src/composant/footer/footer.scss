@@ -1,15 +1,40 @@
 .footer {
     position: absolute;
-    left: 0;
-    bottom: 50;
     width: 100%;
     height: auto;
-    margin-top: 5em;
+    background-color: black;
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+    bottom: 0;
 
+    .footer-content {
+        background-position: center;
 
+        .footer-img{
+            padding-left: 15%;
+            height: auto;
+            background-position: center;
+            background-size: cover;
+        }
 
-    .footer-img{
-        width: 100%;
-        height: auto;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .footer {
+
+        .footer-content{
+
+            .footer-img{
+                padding-left: 0%;
+                height: auto;
+                background-position: center;
+                background-size: cover;
+            }
+        }
+    
     }
 }

@@ -29,6 +29,7 @@ const Slideshow = ({ images, imageClassName, prevArrowClassName, nextArrowClassN
   return (
     <div className="slideshow">
       <FaChevronLeft className={`arrow left ${prevArrowClassName}`} onClick={goToPreviousSlide} />
+      <span className="counter">{`${currentIndex + 1}/${images.length}`}</span>
       <FaChevronRight className={`arrow right ${nextArrowClassName}`} onClick={goToNextSlide} />
       <img src={images[currentIndex]} alt="Slideshow" className={`slide ${imageClassName}`} />
     </div>

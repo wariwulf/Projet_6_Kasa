@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Navigate } from 'react-router-dom';
 import Collapse from '../composant/collapse/collapse';
 import "../cards-details/cards-details.scss";
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
@@ -10,7 +10,7 @@ const CardDetails = ({ data }) => {
   const card = data.find(item => item.id === id); 
 
   if (!card) {
-    return <div>Carte non trouvé</div>;
+    return <Navigate to="/error" />;
   }
 
   const renderRatingStars = () => {
@@ -49,12 +49,10 @@ const CardDetails = ({ data }) => {
                 <h2>{card.title}</h2>
                 <p>{card.location}</p>
             </div>
-            <div className='host'>
+            <div className='host'>           
                 <img src={card.host.picture} alt={card.host.name} className='host-image'/>
-                <span>{card.host.name}</span>
-            </div>
-        </div>
-        <div className='tag-rat'>
+                <span>{card.host.name}</span> 
+            </div>       
             <div className='tag'>
                 {card.tags.map(tag => (
                     <span key={tag}>{tag}</span>
@@ -65,24 +63,28 @@ const CardDetails = ({ data }) => {
             </div>
         </div>
         <div className='coll'>
-            <Collapse 
-                title="Description"     
-                content={card.description} 
-                titleClassName="collapse-title"
-                contentClassName="collapse-content"
-            />
-            <Collapse 
-                title="Équipements" 
-                content={
-                    <ul>
-                        {card.equipments.map(equipment => (
-                        <li key={equipment}>{equipment}</li>
-                        ))}
-                    </ul>
-                } 
-                titleClassName="collapse-title"
-                contentClassName="collapse-content"
-            />
+            <div className='coll-1'>
+                <Collapse 
+                    title="Description"     
+                    content={card.description} 
+                    titleClassName="collapse-title"
+                    contentClassName="collapse-content"
+                />
+            </div>
+            <div className='coll-2'>
+                <Collapse 
+                    title="Équipements" 
+                    content={
+                        <ul>
+                            {card.equipments.map(equipment => (
+                            <li key={equipment}>{equipment}</li>
+                            ))}
+                        </ul>
+                    } 
+                    titleClassName="collapse-title"
+                    contentClassName="collapse-content"
+                />
+            </div>
         </div>
     </div>
   );
