@@ -20,7 +20,7 @@ const Collapse = ({ title, content }) => {
       <div
         className={`collapse-content ${isExpanded ? '' : 'collapsed'}`}
       >
-        {isExpanded && <p>{content}</p>}
+        {isExpanded && <div>{content}</div>}
       </div>
     </div>
   );
